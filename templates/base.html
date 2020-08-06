@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.1/css/bootstrap.min.css" integrity="sha384-VCmXjywReHh4PwowAiWNagnWcLhlEJLA5buUprzK8rxFgeH0kww/aWY76TfkUoSX" crossorigin="anonymous">
+</head>
+<body>
+
+{% if content %}
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Наименование иностранной валюты</th>
+      <th scope="col">Количество единиц иностранной валюты, буквенный код валюты</th>
+      <th scope="col">Официальный курс</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for item in content  %}
+  <th scope="row">{{forloop.counter}}</th>
+    <td>{{ item.0 }}</td>
+    <td>{{ item.1 }}</td>
+    <td>{{ item.2 }}</td>
+   <tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<h3>Возникли проблемы обратитесь к администратору</h3>
+{% endif %}
+</body>
+</html>
